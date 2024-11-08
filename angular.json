@@ -23,13 +23,18 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "src/assets",
+                "output": "/assets"
               }
             ],
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [],
+            "scripts": [
+              "src/assets/scripts/scroll.js",
+              "src/assets/scripts/slideshow.js",
+              "src/assets/scripts/login.js",
+            ],
             "server": "src/main.server.ts",
             "prerender": true,
             "ssr": {

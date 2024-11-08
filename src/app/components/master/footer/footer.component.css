@@ -1,6 +1,7 @@
 .footer {
   background:
-  linear-gradient( rgb(0, 0, 0), rgba(6, 66, 6, 0.459)),url('../../../assets/images/footer/ryan-searle-qjrjJnFypa0-unsplash.jpg');
+  linear-gradient( rgb(0, 0, 0), rgba(6, 66, 6, 0.459)),
+    url('../../../../assets/images/footer/ryan-searle-qjrjJnFypa0-unsplash.jpg');
   display: flex;
   flex-direction: column;
   align-items: center;
