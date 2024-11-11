@@ -5,12 +5,16 @@
     display: flex;
     justify-content: space-between;
     align-items: start;
-    width: 100%;
+    width: calc(100% - 270px);
     height: 180px;
     padding: 3rem 2rem;
     background: var(--color-primary);
     color: var(--color-white);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header-content.maximized {
+  width: calc(100% - 110px);
 }
 
 .welcome-message {

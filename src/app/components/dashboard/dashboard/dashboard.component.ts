@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { SidebarComponent } from '../sidebar/sidebar.component';
 import { HeaderComponent } from '../header/header.component';
 import { Router, RouterOutlet } from '@angular/router';
-import { MainComponent } from "../pages/main/main.component";
+import { MainComponent } from "../main/main.component";
 
 
 @Component({

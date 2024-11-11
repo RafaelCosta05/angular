@@ -1,33 +1,33 @@
 import { Routes } from '@angular/router';
-import { HomePageComponent } from './components/pages/home-page/home-page.component';
-import { AboutPageComponent } from './components/pages/about-page/about-page.component';
-import { ContactPageComponent } from './components/pages/contact-page/contact-page.component';
+import { HomePageComponent } from './components/home-page/home-page.component';
+import { AboutPageComponent } from './components/about-page/about-page.component';
+import { ContactPageComponent } from './components/contact-page/contact-page.component';
 import { LoginComponent } from './components/login/login.component';
 
 import { DashboardComponent } from './components/dashboard/dashboard/dashboard.component';
-import { MainComponent } from './components/dashboard/pages/main/main.component';
-import { ReservationsComponent } from './components/dashboard/pages/reservations/reservations.component';
-import { CourtsComponent } from './components/dashboard/pages/courts/courts.component';
-import { PromotionsComponent } from './components/dashboard/pages/promotions/promotions.component';
-import { StatisticsComponent } from './components/dashboard/pages/statistics/statistics.component';
-import { CustomersComponent } from './components/dashboard/pages/customers/customers.component';
-import { SettingsComponent } from './components/dashboard/pages/settings/settings.component';
+import { MainComponent } from './components/dashboard/main/main.component';
+import { ReservationsComponent } from './components/dashboard/reservations/reservations.component';
+import { CourtsComponent } from './components/dashboard/courts/courts.component';
+import { PromotionsComponent } from './components/dashboard/promotions/promotions.component';
+import { StatisticsComponent } from './components/dashboard/statistics/statistics.component';
+import { CustomersComponent } from './components/dashboard/customers/customers.component';
+import { SettingsComponent } from './components/dashboard/settings/settings.component';
 
 export const routes: Routes = [
   {
     path: '',
     component: HomePageComponent,
-    title: 'Home'
+    title: 'PadelConnect'
   },
   {
     path: 'about-us',
     component: AboutPageComponent,
-    title: 'About'
+    title: 'Sobre nós'
   },
   {
     path: 'contact-us',
     component: ContactPageComponent,
-    title: 'About'
+    title: 'Contactos'
   },
   { path: 'login',
     component: LoginComponent,

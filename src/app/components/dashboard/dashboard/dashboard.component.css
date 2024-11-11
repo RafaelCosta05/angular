@@ -1,7 +1,10 @@
 .main-container {
   background: var(--color-dashboard);
-  /* width: calc(100% - 270px); */
-  width: 100%;
+  width: calc(100% - 270px);
   margin-left: 270px;
   transition: all ease 500ms;
+}
+
+.main-container.maximized {
+  width: calc(100% - 110px);
 }
