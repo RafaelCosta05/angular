@@ -74,3 +74,12 @@
 .card-title.statistics span {
     background: var(--color-warning);
 }
+
+@media screen and (max-width: 1250px) {
+  .cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      width: 100%;
+  }
+}
