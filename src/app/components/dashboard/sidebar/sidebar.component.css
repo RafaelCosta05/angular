@@ -1,0 +1,90 @@
+/* =============================
+   SIDEBAR
+   ============================= */
+   .sidebar {
+    background: var(--color-white);
+    color: var(--color-gray);
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 1rem;
+    width: 270px;
+    height: 100vh;
+    position: fixed;
+    box-shadow: 5px 0 5px rgba(0, 0, 0, 0.1);
+    transition: all ease 500ms;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 10rem;
+    gap: 1rem;
+}
+
+.logo-img {
+    width: 80px;
+    height: 80px;
+}
+
+.logo .site-name {
+    font-size: 1.5rem;
+    display: flex;
+}
+
+.logo h3 span {
+    color: var(--color-primary);
+}
+
+.links-sidebar {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.links-sidebar .box-icon {
+    border-radius: var(--border-radius-1);
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.p-sidebar {
+    font-size: 1.1rem;
+}
+
+.links-sidebar .box-icon.active {
+    border-radius: var(--border-radius-1);
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+
+.links-sidebar:last-child {
+    margin-top: auto;
+}
+
+.links-sidebar:hover .box-icon.active span {
+    color: var(--color-white);
+}
+
+.links-sidebar:hover p{
+    color: var(--color-primary);
+}
+
+.links-sidebar:hover span {
+    color: var(--color-primary);
+}
+
+/* =============================
+   MIN SIDEBAR
+   ============================= */
+.sidebar.closed {
+    width: 110px;
+}
+
+.sidebar.closed p{
+    display: none;
+}

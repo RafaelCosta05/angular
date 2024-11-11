@@ -1,0 +1,7 @@
+.main-container {
+  background: var(--color-dashboard);
+  /* width: calc(100% - 270px); */
+  width: 100%;
+  margin-left: 270px;
+  transition: all ease 500ms;
+}

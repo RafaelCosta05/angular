@@ -4,6 +4,7 @@ import { NavbarComponent } from './components/master/navbar/navbar.component';
 import { FooterComponent } from './components/master/footer/footer.component';
 import { RolesComponent } from './components/roles/roles.component';
 import { LoginComponent } from './components/login/login.component';
+import { DashboardComponent } from './components/dashboard/dashboard/dashboard.component';
 
 @Component({
   selector: 'app',
@@ -13,7 +14,8 @@ import { LoginComponent } from './components/login/login.component';
     NavbarComponent,
     FooterComponent,
     RolesComponent,
-    LoginComponent],
+    LoginComponent,
+    DashboardComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -25,10 +27,11 @@ export class AppComponent implements OnInit{
   constructor(private router: Router) {}
 
   ngOnInit(): void {
-    // Ouve mudanças de rota para verificar se estamos na rota de login
+
     this.router.events.subscribe((event: any) => {
       if (event instanceof NavigationEnd) {
-        this.showHeaderFooter = event.url !== '/login';
+        const url = event.url as string;
+        this.showHeaderFooter = !(url === '/login' || url.startsWith('/dashboard'));
       }
     });
   }
