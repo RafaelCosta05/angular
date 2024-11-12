@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { RouterOutlet, NavigationEnd, Router  } from '@angular/router';
 import { NavbarComponent } from './components/master/navbar/navbar.component';
 import { FooterComponent } from './components/master/footer/footer.component';
-import { RolesComponent } from './components/roles/roles.component';
 import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard/dashboard.component';
 
@@ -13,7 +12,6 @@ import { DashboardComponent } from './components/dashboard/dashboard/dashboard.c
     RouterOutlet,
     NavbarComponent,
     FooterComponent,
-    RolesComponent,
     LoginComponent,
     DashboardComponent],
   templateUrl: './app.component.html',
