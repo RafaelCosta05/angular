@@ -3,46 +3,16 @@
       <img src="assets/images/logos/LogoCoresPadel_Final.png" class="logo-img">
       <h3 class="site-name">Padel <span>Connect</span></h3>
   </a>
-  <a class="links-sidebar" href="/dashboard/reservations">
-      <div class="box-icon" [ngClass]="{'active': isActive('/dashboard/reservations')}">
-        <span class="material-icons-sharp">event</span>
-      </div>
-      <p class="p-sidebar">Reservas</p>
-  </a>
-  <a class="links-sidebar" href="/dashboard/courts">
-      <div class="box-icon" [ngClass]="{'active': isActive('/dashboard/courts')}">
-          <span class="material-icons-sharp">sports_tennis</span>
-      </div>
-      <p class="p-sidebar">Campos</p>
-  </a>
-  <a class="links-sidebar" href="/dashboard/promotions">
-      <div class="box-icon" [ngClass]="{'active': isActive('/dashboard/promotions')}">
-          <span class="material-icons-sharp">sell</span>
-      </div>
-      <p class="p-sidebar">Promoções</p>
-  </a>
-  <a class="links-sidebar" href="/dashboard/statistics">
-      <div class="box-icon" [ngClass]="{'active': isActive('/dashboard/statistics')}">
-          <span class="material-icons-sharp">signal_cellular_alt</span>
-      </div>
-      <p class="p-sidebar">Estatísticas</p>
-  </a>
-  <a class="links-sidebar" href="/dashboard/customers">
-      <div class="box-icon" [ngClass]="{'active': isActive('/dashboard/customers')}">
-          <span class="material-icons-sharp">group</span>
-      </div>
-      <p class="p-sidebar">Clientes</p>
-  </a>
-  <a class="links-sidebar" href="/dashboard/settings">
-      <div class="box-icon" [ngClass]="{'active': isActive('/dashboard/settings')}">
-          <span class="material-icons-sharp">settings</span>
-      </div>
-      <p class="p-sidebar">Definições</p>
-  </a>
-  <a class="links-sidebar">
-      <div class="box-icon">
-          <span class="material-icons-sharp">logout</span>
-      </div>
-      <p class="p-sidebar">Logout</p>
-  </a>
+
+  <link-sidebar href="/dashboard/reservations" icon="event" p="Reservas"></link-sidebar>
+  <link-sidebar href="/dashboard/courts" icon="sports_tennis" p="Campos"></link-sidebar>
+  <link-sidebar href="/dashboard/promotions" icon="sell" p="Promoções"></link-sidebar>
+  <link-sidebar href="/dashboard/statistics" icon="signal_cellular_alt" p="Estatísticas"></link-sidebar>
+  <link-sidebar href="/dashboard/customers" icon="group" p="Clientes"></link-sidebar>
+  <link-sidebar href="/dashboard/settings" icon="settings" p="Definições"></link-sidebar>
+  
+  <div class="logout-container">
+    <link-sidebar icon="logout" p="Logout"></link-sidebar>
+  </div>
+
 </div>
