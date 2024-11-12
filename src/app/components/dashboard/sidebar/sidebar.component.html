@@ -4,37 +4,37 @@
       <h3 class="site-name">Padel <span>Connect</span></h3>
   </a>
   <a class="links-sidebar" href="/dashboard/reservations">
-      <div class="box-icon active">
-          <span class="material-icons-sharp">book_online</span>
+      <div class="box-icon" [ngClass]="{'active': isActive('/dashboard/reservations')}">
+        <span class="material-icons-sharp">event</span>
       </div>
       <p class="p-sidebar">Reservas</p>
   </a>
   <a class="links-sidebar" href="/dashboard/courts">
-      <div class="box-icon">
+      <div class="box-icon" [ngClass]="{'active': isActive('/dashboard/courts')}">
           <span class="material-icons-sharp">sports_tennis</span>
       </div>
       <p class="p-sidebar">Campos</p>
   </a>
   <a class="links-sidebar" href="/dashboard/promotions">
-      <div class="box-icon">
+      <div class="box-icon" [ngClass]="{'active': isActive('/dashboard/promotions')}">
           <span class="material-icons-sharp">sell</span>
       </div>
       <p class="p-sidebar">Promoções</p>
   </a>
   <a class="links-sidebar" href="/dashboard/statistics">
-      <div class="box-icon">
+      <div class="box-icon" [ngClass]="{'active': isActive('/dashboard/statistics')}">
           <span class="material-icons-sharp">signal_cellular_alt</span>
       </div>
       <p class="p-sidebar">Estatísticas</p>
   </a>
   <a class="links-sidebar" href="/dashboard/customers">
-      <div class="box-icon">
+      <div class="box-icon" [ngClass]="{'active': isActive('/dashboard/customers')}">
           <span class="material-icons-sharp">group</span>
       </div>
       <p class="p-sidebar">Clientes</p>
   </a>
   <a class="links-sidebar" href="/dashboard/settings">
-      <div class="box-icon">
+      <div class="box-icon" [ngClass]="{'active': isActive('/dashboard/settings')}">
           <span class="material-icons-sharp">settings</span>
       </div>
       <p class="p-sidebar">Definições</p>
