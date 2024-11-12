@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
+import { TitlePageComponent } from '../title-page/title-page.component';
 
 @Component({
   selector: 'app-statistics',
   standalone: true,
-  imports: [],
+  imports: [
+    TitlePageComponent
+  ],
   templateUrl: './statistics.component.html',
   styleUrl: './statistics.component.css'
 })

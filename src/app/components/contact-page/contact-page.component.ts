@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
+import { PageTopComponent } from '../page-top/page-top.component';
 
 @Component({
   selector: 'catarina',
   standalone: true,
-  imports: [],
+  imports: [
+    PageTopComponent
+  ],
   templateUrl: './contact-page.component.html',
   styleUrl: './contact-page.component.css'
 })

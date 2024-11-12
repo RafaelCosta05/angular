@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
+import { TitlePageComponent } from '../title-page/title-page.component';
 
 @Component({
   selector: 'app-courts',
   standalone: true,
-  imports: [],
+  imports: [
+    TitlePageComponent
+  ],
   templateUrl: './courts.component.html',
   styleUrl: './courts.component.css'
 })

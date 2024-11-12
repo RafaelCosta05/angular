@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
+import { TitlePageComponent } from '../title-page/title-page.component';
 
 @Component({
   selector: 'app-reservations',
   standalone: true,
-  imports: [],
+  imports: [
+    TitlePageComponent
+  ],
   templateUrl: './reservations.component.html',
   styleUrl: './reservations.component.css'
 })
