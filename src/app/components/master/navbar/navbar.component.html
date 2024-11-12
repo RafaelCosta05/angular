@@ -3,10 +3,10 @@
       <img src="assets/images/logos/LogoBrancoPadel_Final.png">
   </div>
   <div class="links-box">
-      <a href="/" class="active">Home</a>
-      <a href="">Campos</a>
-      <a href="/about-us">Sobre nós</a>
-      <a href="/contact-us">Contactos</a>
+      <a href="/" [ngClass]="{'active': isActive('/')}">Home</a>
+      <a href="/courts" [ngClass]="{'active': isActive('/courts')}">Campos</a>
+      <a href="/about-us" [ngClass]="{'active': isActive('/about-us')}">Sobre nós</a>
+      <a href="/contact-us" [ngClass]="{'active': isActive('/contact-us')}">Contactos</a>
 
       <div class="btn-box">
           <a href="" class="btn btn-reservation">Reservar</a>

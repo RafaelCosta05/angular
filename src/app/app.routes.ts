@@ -2,6 +2,8 @@ import { Routes } from '@angular/router';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { AboutPageComponent } from './components/about-page/about-page.component';
 import { ContactPageComponent } from './components/contact-page/contact-page.component';
+import { CourtsPageComponent } from './components/courts-page/courts-page.component';
+
 import { LoginComponent } from './components/login/login.component';
 
 import { DashboardComponent } from './components/dashboard/dashboard/dashboard.component';
@@ -18,6 +20,11 @@ export const routes: Routes = [
     path: '',
     component: HomePageComponent,
     title: 'PadelConnect'
+  },
+  {
+    path: 'courts',
+    component: CourtsPageComponent,
+    title: 'Campos'
   },
   {
     path: 'about-us',
