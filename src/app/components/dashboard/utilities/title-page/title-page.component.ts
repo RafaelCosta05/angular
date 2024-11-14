@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-title-page',
+  selector: 'title-page',
   standalone: true,
   imports: [],
   templateUrl: './title-page.component.html',

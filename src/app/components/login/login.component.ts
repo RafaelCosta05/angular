@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
-  selector: 'app-login',
+  selector: 'login',
   standalone: true,
   imports: [
     FormsModule
@@ -25,18 +25,22 @@ export class LoginComponent {
   ) {}
 
   login() {
-    this.authService.login(this.loginObj).subscribe(
-      (res: any) => {
+    this.authService.login(this.loginObj).subscribe({
+      next: (res: any) => {
         if (res.status === 'success') {
           alert('Login sucesso');
-          this.router.navigateByUrl("dashboard")
+          this.router.navigateByUrl("dashboard");
         } else if (res.status === 'error') {
           alert('Verifique as informações');
         }
       },
-      (err) => {
+      error: (err) => {
         alert('Erro ao tentar logar: ' + err.message);
+      },
+      complete: () => {
+        console.log('Login request completed');
       }
-    );
+    });
   }
+
 }

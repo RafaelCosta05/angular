@@ -3,7 +3,7 @@ import { Router,RouterModule  } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-navbar',
+  selector: 'navbar',
   standalone: true,
   imports: [
     CommonModule,

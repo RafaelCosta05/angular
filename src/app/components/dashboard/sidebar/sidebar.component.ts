@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { LinksSidebarComponent } from '../utilities/links-sidebar/links-sidebar.component';
 
 @Component({
-  selector: 'app-sidebar',
+  selector: 'sidebar',
   standalone: true,
   imports: [
     CommonModule,
