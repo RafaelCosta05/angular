@@ -38,6 +38,9 @@ export class LoginComponent {
     this.authService.login(this.loginObj).subscribe({
       next: (res: any) => {
         if (res.status === 'success') {
+          const token = res.token
+          localStorage.setItem('authToken', token);
+
           alert('Login sucesso');
           this.router.navigateByUrl("dashboard");
         }

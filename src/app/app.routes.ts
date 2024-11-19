@@ -6,6 +6,8 @@ import { CourtsPageComponent } from './components/pages/courts-page/courts-page.
 
 import { LoginComponent } from './components/login/login.component';
 
+import { authGuard } from './guards/auth.guard';
+
 import { DashboardComponent } from './components/dashboard/dashboard/dashboard.component';
 import { MainComponent } from './components/dashboard/pages/main/main.component';
 import { ReservationsComponent } from './components/dashboard/pages/reservations/reservations.component';
@@ -44,6 +46,7 @@ export const routes: Routes = [
     path: 'dashboard',
     component: DashboardComponent,
     title: 'Dashboard',
+    canActivate: [authGuard],
     children: [
       { path: 'main', component: MainComponent },
       { path: 'reservations', component: ReservationsComponent, title: 'Dashboard - Reservas' },
