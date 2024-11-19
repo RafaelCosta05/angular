@@ -5,14 +5,17 @@ import { Router } from '@angular/router';
 import { UsersService } from './../../../../services/users.service';
 import { CommonModule } from '@angular/common';
 
+import { CardTableComponent } from '../../utilities/card-table/card-table.component';
+
 @Component({
   selector: 'customers',
   standalone: true,
   imports: [
     CommonModule,
     TitlePageComponent,
-    ModalComponent
-  ],
+    ModalComponent,
+    CardTableComponent
+],
   templateUrl: './customers.component.html',
   styleUrl: './customers.component.css'
 })

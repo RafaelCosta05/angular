@@ -2,27 +2,28 @@
 
 <title-page pageText="Clientes"></title-page>
 
-<!-- src/app/user-list/user-list.component.html -->
-<div *ngIf="users.length > 0; else noUsers">
-  <table>
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Nome</th>
-        <th>Email</th>
-        <th>Role</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let user of users">
-        <td>{{ user.id }}</td>
-        <td>{{ user.username }}</td>
-        <td>{{ user.email }}</td>
-        <td>{{ user.role?.name }}</td>  <!-- Exibe o nome da role do usuário -->
-      </tr>
-    </tbody>
-  </table>
-</div>
+<card-table>
+  <div *ngIf="users.length > 0; else noUsers">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nome</th>
+          <th>Email</th>
+          <th>Role</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.id }}</td>
+          <td>{{ user.username }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.role?.name }}</td>  <!-- Exibe o nome da role do usuário -->
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</card-table>
 
 <ng-template #noUsers>
   <p>Nenhum usuário encontrado.</p>
