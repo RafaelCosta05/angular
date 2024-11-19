@@ -1,0 +1,19 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead th{
+  color: var(--color-primary);
+  font-size: 1.3rem;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tbody td {
+  font-size: 1.1rem;
+  color: var(--color-gray);
+}

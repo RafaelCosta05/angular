@@ -7,7 +7,7 @@ export const roleGuard: CanActivateFn = (route, state) => {
   const platformId = inject(PLATFORM_ID);
 
   // Verificar se estamos no navegador (cliente)
-  if (isPlatformBrowser(platformId)) {
+  if (typeof window !== 'undefined' && window.localStorage) {
     // Garantir que `localStorage` só seja acessado no lado do cliente
     const userRole = window.localStorage.getItem('userRole');
 
