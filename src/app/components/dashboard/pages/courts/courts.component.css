@@ -17,3 +17,8 @@ tbody td {
   font-size: 1.1rem;
   color: var(--color-gray);
 }
+
+.no-data {
+  font-size: 1.1rem;
+  color: var(--color-danger);
+}

@@ -36,6 +36,7 @@ export class CourtsComponent {
     loadCourts(): void {
       this.courtsService.index().subscribe({
         next: (data: any) => {
+          console.log(data);
           this.courts = data;
         },
         error: (err: any) => {
