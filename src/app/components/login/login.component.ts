@@ -15,7 +15,14 @@ import { AuthService } from '../../services/auth.service';
 
 export class LoginComponent {
   loginObj = {
+    login: 'SuperAdmin',
+    password: 'Az123456!'
+  };
+
+  registerObj = {
+    username: '',
     email: '',
+    nif: '',
     password: ''
   };
 
@@ -30,17 +37,22 @@ export class LoginComponent {
         if (res.status === 'success') {
           alert('Login sucesso');
           this.router.navigateByUrl("dashboard");
-        } else if (res.status === 'error') {
-          alert('Verifique as informações');
         }
       },
       error: (err) => {
-        alert('Erro ao tentar logar: ' + err.message);
-      },
-      complete: () => {
-        console.log('Login request completed');
+        if (err.status === 401) {
+          alert('Credenciais inválidas. Verifique o login e a senha.');
+        } else {
+          alert('Erro ao tentar logar: ' + err.message);
+        }
       }
     });
   }
+
+  // register() {
+  //   this.authService.register() {
+
+  //   }
+  // }
 
 }
