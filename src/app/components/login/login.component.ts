@@ -1,8 +1,9 @@
-import { Component, inject } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
+import { ModalComponent } from '../utilities/modal/modal.component';
 
 @Component({
   selector: 'login',
@@ -10,12 +11,14 @@ import { AuthService } from '../../services/auth.service';
   imports: [
     FormsModule,
     CommonModule,
+    ModalComponent
   ],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css',
+  styleUrls: ['./login.component.css'],
 })
-
 export class LoginComponent {
+  @ViewChild(ModalComponent) modalComponent: ModalComponent | undefined;
+
   loginObj = {
     login: '',
     password: ''
@@ -31,25 +34,38 @@ export class LoginComponent {
 
   constructor(
     private authService: AuthService,
-    private router:Router
+    private router: Router
   ) {}
 
   login() {
     this.authService.login(this.loginObj).subscribe({
       next: (res: any) => {
         if (res.status === 'success') {
-          const token = res.token
+          const token = res.token;
           localStorage.setItem('authToken', token);
 
-          alert('Login sucesso');
-          this.router.navigateByUrl("dashboard");
+          // alert('Login sucesso');
+          this.modalComponent?.showModal(
+            'Success',
+            'Login feito com sucesso'
+          );
+
+          this.modalComponent?.modalClosed.subscribe(() => {
+            this.router.navigateByUrl('dashboard');
+          });
         }
       },
       error: (err) => {
         if (err.status === 401) {
-          alert('Credenciais inválidas. Verifique o login e a senha.');
+          this.modalComponent?.showModal(
+            'Error',
+            'Credenciais inválidas. Verifique o login e a senha!'
+          );
         } else {
-          alert('Erro ao tentar logar: ' + err.message);
+          this.modalComponent?.showModal(
+            'Error',
+            'Erro ao tentar logar: ' + err.message
+          );
         }
       }
     });
@@ -59,12 +75,16 @@ export class LoginComponent {
     this.authService.register(this.registerObj).subscribe({
       next: (res: any) => {
         if (res.status === 'success') {
-          alert('Conta criada com sucesso');
-          location.reload();
+          this.modalComponent?.modalClosed.subscribe(() => {
+            location.reload();
+          });
         }
       },
       error: (err) => {
-          alert('Erro de validação: ' + err.error.details);
+        this.modalComponent?.showModal(
+          'Error',
+          'Erro ao tentar logar: ' + err.message
+        );
       }
     });
   }
