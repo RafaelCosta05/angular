@@ -29,7 +29,9 @@ export class AppComponent implements OnInit{
     this.router.events.subscribe((event: any) => {
       if (event instanceof NavigationEnd) {
         const url = event.url as string;
-        this.showHeaderFooter = !(url === '/login' || url.startsWith('/dashboard'));
+        this.showHeaderFooter = !(url === '/login' ||
+          url.startsWith('/dashboard') ||
+          url === '/unauthorized');
       }
     });
   }

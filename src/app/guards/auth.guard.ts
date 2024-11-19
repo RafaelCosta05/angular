@@ -11,8 +11,7 @@ export const authGuard: CanActivateFn = (route, state) => {
     if (token) {
       return true;
     } else {
-      router.navigate(['/login']);
-      alert('Erro: utilizador não autenticado');
+      router.navigate(['unauthorized']);
       return false;
     }
   } else {
