@@ -8,6 +8,8 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
+  username = localStorage.getItem('username');
+
   date: string = "12 de Novembro";
   hour: string = "16:00";
 }

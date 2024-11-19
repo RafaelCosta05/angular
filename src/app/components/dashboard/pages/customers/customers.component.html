@@ -7,23 +7,30 @@
     <table>
       <thead>
         <tr>
-          <th>ID</th>
           <th>Nome</th>
           <th>Email</th>
           <th>Role</th>
+          <th>Last Login</th>
+          <th>Actions</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let user of users">
-          <td>{{ user.id }}</td>
           <td>{{ user.username }}</td>
           <td>{{ user.email }}</td>
-          <td>{{ user.role?.name }}</td>  <!-- Exibe o nome da role do usuário -->
+          <td>{{ user.role?.name }}</td>
+          <td *ngIf="user.last_login_at; else noLogin">
+            {{ user.last_login_at }}
+          </td>
         </tr>
       </tbody>
     </table>
   </div>
 </card-table>
+
+<ng-template #noLogin>
+  <td>Nunca fez login</td>
+</ng-template>
 
 <ng-template #noUsers>
   <p>Nenhum usuário encontrado.</p>

@@ -47,6 +47,9 @@ export class LoginComponent {
           const userRole = res.user_info.role.name;
           localStorage.setItem('userRole', userRole);
 
+          const username = res.user_info.username;
+          localStorage.setItem('username', username);
+
           this.modalComponent?.showModal(
             'Success',
             'Login feito com sucesso'
