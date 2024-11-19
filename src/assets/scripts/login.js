@@ -25,13 +25,14 @@ const step1 = document.querySelector('.step-1');
 const step2 = document.querySelector('.step-2');
 
 nextBtn.addEventListener('click', () => {
-    step1.classList.add('hidden');
-    step2.classList.add('active');
+  step1.classList.add('hidden');  // Esconde o passo 1
+  step2.classList.remove('hidden');  // Exibe o passo 2
 });
 
+// Ação para o botão 'Previous'
 previousBtn.addEventListener('click', () => {
-    step1.classList.remove('hidden');
-    step2.classList.remove('active');
+  step1.classList.remove('hidden');  // Exibe o passo 1
+  step2.classList.add('hidden');  // Esconde o passo 2
 });
 
 }

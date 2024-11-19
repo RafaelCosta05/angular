@@ -14,7 +14,7 @@ export class AuthService {
     return this.http.post(ApiRoutes.login, loginObj, { withCredentials: true });
   }
 
-  register(registerObj: { email: string; password: string }): Observable<any> {
+  register(registerObj: { username: string; email: string; nif: number; password: string }): Observable<any> {
     return this.http.post(ApiRoutes.register, registerObj);
   }
 }

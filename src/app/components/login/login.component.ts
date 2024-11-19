@@ -1,4 +1,5 @@
 import { Component, inject } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
@@ -7,7 +8,8 @@ import { AuthService } from '../../services/auth.service';
   selector: 'login',
   standalone: true,
   imports: [
-    FormsModule
+    FormsModule,
+    CommonModule,
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
@@ -15,15 +17,16 @@ import { AuthService } from '../../services/auth.service';
 
 export class LoginComponent {
   loginObj = {
-    login: 'SuperAdmin',
-    password: 'Az123456!'
+    login: '',
+    password: ''
   };
 
   registerObj = {
     username: '',
     email: '',
-    nif: '',
-    password: ''
+    nif: 0,
+    password: '',
+    password_confirmation: ''
   };
 
   constructor(
@@ -49,10 +52,17 @@ export class LoginComponent {
     });
   }
 
-  // register() {
-  //   this.authService.register() {
-
-  //   }
-  // }
-
+  register() {
+    this.authService.register(this.registerObj).subscribe({
+      next: (res: any) => {
+        if (res.status === 'success') {
+          alert('Conta criada com sucesso');
+          location.reload();
+        }
+      },
+      error: (err) => {
+          alert('Erro de validação: ' + err.error.details);
+      }
+    });
+  }
 }
