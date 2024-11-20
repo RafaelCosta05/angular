@@ -1,6 +1,7 @@
 table {
   width: 100%;
   border-collapse: collapse;
+  transition: all ease 300ms;
 }
 
 thead th{
@@ -16,6 +17,11 @@ th, td {
 tbody td {
   font-size: 1.1rem;
   color: var(--color-gray);
+}
+
+.loading {
+  font-size: 1.1rem;
+  color: var(--color-primary);
 }
 
 .no-data {

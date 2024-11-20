@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { SidebarComponent } from '../sidebar/sidebar.component';
 import { HeaderComponent } from '../header/header.component';
 import { Router, RouterOutlet } from '@angular/router';
+import { ModalComponent } from '../../utilities/modal/modal.component';
 
 
 @Component({
@@ -11,10 +12,19 @@ import { Router, RouterOutlet } from '@angular/router';
     SidebarComponent,
     HeaderComponent,
     RouterOutlet,
+    ModalComponent
 ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent {
+  @ViewChild(ModalComponent) modalComponent: ModalComponent | undefined;
+
     constructor(private router: Router) {}
+
+    showModal(type: string, message: string): void {
+      if (this.modalComponent) {
+        this.modalComponent.showModal(type, message);  // Chamando showModal do ModalComponent
+      }
+    }
 }

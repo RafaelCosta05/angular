@@ -1,11 +1,12 @@
 import { CourtsService } from './../../../../services/courts.service';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { Component} from '@angular/core';
 
-import { Component, ViewChild } from '@angular/core';
 import { TitlePageComponent } from '../../utilities/title-page/title-page.component';
 import { CardTableComponent } from '../../utilities/card-table/card-table.component';
 import { ModalComponent } from '../../../utilities/modal/modal.component';
+import { DashboardComponent } from '../../dashboard/dashboard.component';
 
 @Component({
   selector: 'courts',
@@ -14,19 +15,22 @@ import { ModalComponent } from '../../../utilities/modal/modal.component';
     CommonModule,
     TitlePageComponent,
     CardTableComponent,
-    ModalComponent
+    ModalComponent,
+    DashboardComponent
   ],
   templateUrl: './courts.component.html',
   styleUrl: './courts.component.css'
 })
 export class CourtsComponent {
-  @ViewChild(ModalComponent) modalComponent: ModalComponent | undefined;
 
   courts: any[] = [];
+  isLoading = true;
+
 
     constructor(
       private router: Router,
       private courtsService: CourtsService,
+      private dashboardComponent: DashboardComponent,
     ) {}
 
     ngOnInit(): void {
@@ -36,15 +40,26 @@ export class CourtsComponent {
     loadCourts(): void {
       this.courtsService.index().subscribe({
         next: (data: any) => {
-          console.log(data);
-          this.courts = data;
+          setTimeout(() => {
+            if (data && data.message) {
+              this.dashboardComponent.showModal(
+                'Message',
+                data.message
+              );
+            } else {
+              this.courts = data.fields;
+            }
+            this.isLoading = false;
+          }, 1500);
         },
+
         error: (err: any) => {
           alert('erro' + err.message)
-          this.modalComponent?.showModal(
+          this.dashboardComponent.showModal(
             'Error',
             'Erro ao tentar carregar a lista de campos'
           );
+          this.isLoading = false;
         }
       })
     }

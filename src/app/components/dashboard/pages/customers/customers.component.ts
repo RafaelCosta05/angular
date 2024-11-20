@@ -1,11 +1,12 @@
-import { Component, ViewChild } from '@angular/core';
-import { TitlePageComponent } from '../../utilities/title-page/title-page.component';
+import { Component } from '@angular/core';
 import { ModalComponent } from '../../../utilities/modal/modal.component';
 import { Router } from '@angular/router';
-import { UsersService } from './../../../../services/users.service';
 import { CommonModule } from '@angular/common';
+import { UsersService } from './../../../../services/users.service';
 
 import { CardTableComponent } from '../../utilities/card-table/card-table.component';
+import { TitlePageComponent } from '../../utilities/title-page/title-page.component';
+import { DashboardComponent } from '../../dashboard/dashboard.component';
 
 @Component({
   selector: 'customers',
@@ -14,19 +15,21 @@ import { CardTableComponent } from '../../utilities/card-table/card-table.compon
     CommonModule,
     TitlePageComponent,
     ModalComponent,
-    CardTableComponent
+    CardTableComponent,
+    DashboardComponent
 ],
   templateUrl: './customers.component.html',
   styleUrl: './customers.component.css'
 })
 export class CustomersComponent {
-  @ViewChild(ModalComponent) modalComponent: ModalComponent | undefined;
 
   users: any[] = [];
+  isLoading = true;
 
   constructor(
     private userService: UsersService,
     private router: Router,
+    private dashboardComponent: DashboardComponent,
   ) {}
 
   ngOnInit(): void {
@@ -36,14 +39,18 @@ export class CustomersComponent {
   loadUsers(): void {
     this.userService.index().subscribe({
       next: (data: any) => {
-        this.users = data;
+        setTimeout(() => {
+          this.users = data;
+          this.isLoading = false;
+        }, 1500);
       },
       error: (err: any) => {
         alert('erro' + err.message)
-        this.modalComponent?.showModal(
+        this.dashboardComponent.showModal(
           'Error',
           'Erro ao tentar carregar a lista de usuários'
         );
+        this.isLoading = false;
       }
     })
   }

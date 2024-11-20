@@ -1,31 +1,34 @@
-<modal></modal>
-
 <title-page pageText="Clientes"></title-page>
 
 <card-table>
-  <div *ngIf="users.length > 0; else noUsers">
-    <table>
-      <thead>
-        <tr>
-          <th>Nome</th>
-          <th>Email</th>
-          <th>Role</th>
-          <th>Last Login</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let user of users">
-          <td>{{ user.username }}</td>
-          <td>{{ user.email }}</td>
-          <td>{{ user.role?.name }}</td>
-          <td *ngIf="user.last_login_at; else noLogin">
-            {{ user.last_login_at }}
-          </td>
-        </tr>
-      </tbody>
-    </table>
+  <div *ngIf="isLoading; else showTable">
+    <p class="loading">Carregando...</p>
   </div>
+  <ng-template #showTable>
+    <div *ngIf="users.length > 0; else noUsers">
+      <table>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Last Login</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users">
+            <td>{{ user.username }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.role?.name }}</td>
+            <td *ngIf="user.last_login_at; else noLogin">
+              {{ user.last_login_at }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</ng-template>
 </card-table>
 
 <ng-template #noLogin>
@@ -33,6 +36,6 @@
 </ng-template>
 
 <ng-template #noUsers>
-  <p>Nenhum usuário encontrado.</p>
+  <p class="no-users">Nenhum usuário encontrado.</p>
 </ng-template>
 
