@@ -24,7 +24,13 @@ export class DashboardComponent {
 
     showModal(type: string, message: string): void {
       if (this.modalComponent) {
-        this.modalComponent.showModal(type, message);  // Chamando showModal do ModalComponent
+        this.modalComponent.showModal(type, message);
+      }
+    }
+
+    closeModal() : void {
+      if (this.modalComponent) {
+        this.modalComponent.closeModal();
       }
     }
 }

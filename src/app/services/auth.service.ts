@@ -14,7 +14,16 @@ export class AuthService {
     return this.http.post(ApiRoutes.login, loginObj, { withCredentials: true });
   }
 
-  register(registerObj: { username: string; email: string; nif: number; password: string }): Observable<any> {
+  register(registerObj: { username: string; email: string; nif: number; password: string })
+  {
     return this.http.post(ApiRoutes.register, registerObj);
+  }
+
+  logout(): Observable<any> {
+    return this.http.post(ApiRoutes.logout, {}, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('authToken')}`
+      }
+    });
   }
 }
