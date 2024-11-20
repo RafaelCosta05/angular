@@ -46,10 +46,12 @@ export class CustomersComponent {
       },
       error: (err: any) => {
         alert('erro' + err.message)
-        this.dashboardComponent.showModal(
-          'Error',
-          'Erro ao tentar carregar a lista de usuários'
-        );
+        if(this.router.url.includes('/courts')) {
+          this.dashboardComponent.showModal(
+            'Error',
+            'Erro ao tentar carregar a lista de usuários'
+          );
+        }
         this.isLoading = false;
       }
     })

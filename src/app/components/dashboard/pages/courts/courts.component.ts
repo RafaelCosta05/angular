@@ -42,10 +42,12 @@ export class CourtsComponent {
         next: (data: any) => {
           setTimeout(() => {
             if (data && data.message) {
-              this.dashboardComponent.showModal(
-                'Message',
-                data.message
-              );
+              if(this.router.url.includes('/courts')) {
+                this.dashboardComponent.showModal(
+                  'Message',
+                  data.message
+                );
+              }
             } else {
               this.courts = data.fields;
             }
@@ -55,10 +57,12 @@ export class CourtsComponent {
 
         error: (err: any) => {
           alert('erro' + err.message)
-          this.dashboardComponent.showModal(
-            'Error',
-            'Erro ao tentar carregar a lista de campos'
-          );
+          if(this.router.url.includes('/courts')) {
+            this.dashboardComponent.showModal(
+              'Error',
+              'Erro ao tentar carregar a lista de campos'
+            );
+          }
           this.isLoading = false;
         }
       })
