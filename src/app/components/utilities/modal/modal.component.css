@@ -53,6 +53,10 @@
   color: var(--color-danger);
 }
 
+.message {
+  color: var(--color-blue-2)
+}
+
 .modal-header button {
   background: none;
   border: none;
