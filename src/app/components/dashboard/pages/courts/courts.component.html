@@ -6,7 +6,6 @@
   </div>
   <ng-template #showTable>
     <div *ngIf="courts.length > 0; else noCourts">
-      {{ courts.length }}
       <table>
         <thead>
           <tr>
@@ -22,9 +21,9 @@
           </tr>
         </thead>
         <tbody>
-          <!-- <tr *ngFor="let court of courts">
+          <tr *ngFor="let court of courts">
 
-          </tr> -->
+          </tr>
         </tbody>
       </table>
     </div>
@@ -32,5 +31,5 @@
 </card-table>
 
 <ng-template #noCourts>
-  <p class="no-data">Não existe nenhum campo</p>
+  <p class="no-courts">Não existe nenhum campo</p>
 </ng-template>

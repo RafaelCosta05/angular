@@ -1,1 +1,37 @@
 <title-page pageText="Empresas"></title-page>
+
+<card-table>
+  <div *ngIf="isLoading; else showTable">
+    <p class="loading">Carregando...</p>
+  </div>
+  <ng-template #showTable>
+    <div *ngIf="companies.length > 0; else noCompanies">
+      <table>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Contact</th>
+            <th>NIF</th>
+            <th>Campos</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let company of companies">
+            <td>{{ company.name }}</td>
+            <td>{{ company.email }}</td>
+            <td>{{ company.contact }}</td>
+            <td>{{ company.nif }}</td>
+            <td>{{ company.fields }}</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</ng-template>
+</card-table>
+
+<ng-template #noCompanies>
+  <p class="no-companies">Nenhuma empresa encontrada</p>
+</ng-template>

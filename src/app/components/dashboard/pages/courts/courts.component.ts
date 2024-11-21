@@ -26,7 +26,6 @@ export class CourtsComponent {
   courts: any[] = [];
   isLoading = true;
 
-
     constructor(
       private router: Router,
       private courtsService: CourtsService,
@@ -56,7 +55,6 @@ export class CourtsComponent {
         },
 
         error: (err: any) => {
-          alert('erro' + err.message)
           if(this.router.url.includes('/courts')) {
             this.dashboardComponent.showModal(
               'Error',

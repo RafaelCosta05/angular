@@ -6,5 +6,7 @@ export const ApiRoutes = {
   users: 'https://api.divinehost.pt/api/users',
   client: 'https://api.divinehost.pt/api/clients/',
 
-  courts: 'https://api.divinehost.pt/api/fields'
+  courts: 'https://api.divinehost.pt/api/fields',
+
+  companies: 'https://api.divinehost.pt/api/companies'
 }

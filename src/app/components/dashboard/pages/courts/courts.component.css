@@ -24,7 +24,7 @@ tbody td {
   color: var(--color-primary);
 }
 
-.no-data {
+.no-courts {
   font-size: 1.1rem;
   color: var(--color-danger);
 }
