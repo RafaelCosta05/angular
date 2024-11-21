@@ -8,6 +8,8 @@ import { CardTableComponent } from '../../utilities/card-table/card-table.compon
 import { TitlePageComponent } from '../../utilities/title-page/title-page.component';
 import { DashboardComponent } from '../../dashboard/dashboard.component';
 
+import { ActivatedRoute } from '@angular/router';
+
 @Component({
   selector: 'customers',
   standalone: true,
@@ -25,6 +27,8 @@ export class CustomersComponent {
 
   users: any[] = [];
   isLoading = true;
+
+  src: string = '../../../../../assets/images/icons/unauthorized.png'
 
   constructor(
     private userService: UsersService,
@@ -48,7 +52,14 @@ export class CustomersComponent {
         this.isLoading = false;
 
         if (err.status === 403) {
-          this.router.navigate(['unauthorized']);
+          this.router.navigate(['error-page'], {
+            queryParams: {
+              error: '403',
+              message: 'Você não tem permissão para aceder a esta página!',
+              src: this.src
+            }
+          }
+          );
         } else {
           alert('Erro: ' + err.message);
           if (this.router.url.includes('/courts')) {

@@ -1,16 +1,9 @@
-/* body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: var(--color-dashboard) !important;
-} */
 :host {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: var(--color-dashboard); /* Define um background específico para o login */
+  background-color: var(--color-dashboard);
 }
 
 .no-animation .form-card,
@@ -35,7 +28,6 @@
     align-items: center;
     position: absolute;
     background: var(--color-white);
-    /* aqui */
     right: 0;
     width: 50%;
     height: 100%;

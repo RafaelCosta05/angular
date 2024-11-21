@@ -8,6 +8,7 @@ import { LoginComponent } from './components/login/login.component';
 
 import { authGuard } from './guards/auth.guard';
 import { UnauthorizedComponent } from './components/unauthorized/unauthorized.component';
+import { ErrorPageComponent } from './components/error-page/error-page.component';
 
 import { DashboardComponent } from './components/dashboard/dashboard/dashboard.component';
 import { MainComponent } from './components/dashboard/pages/main/main.component';
@@ -64,4 +65,9 @@ export const routes: Routes = [
     component: UnauthorizedComponent,
     title: '401 - unauthorized'
   },
+  {
+    path: 'error-page',
+    component: ErrorPageComponent,
+    title: 'Error'
+  }
 ];

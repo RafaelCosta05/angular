@@ -18,7 +18,6 @@ import { DashboardComponent } from './components/dashboard/dashboard/dashboard.c
   styleUrl: './app.component.css'
 })
 export class AppComponent implements OnInit{
-  // title = 'Angular';
 
   showHeaderFooter: boolean = true;
 
@@ -30,7 +29,7 @@ export class AppComponent implements OnInit{
         const url = event.url as string;
         this.showHeaderFooter = !(url === '/login' ||
           url.startsWith('/dashboard') ||
-          url === '/unauthorized');
+          url.startsWith('/error-page'));
       }
     });
   }
