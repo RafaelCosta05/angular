@@ -49,7 +49,7 @@ export class LoginComponent {
 
           this.modalComponent?.showModal(
             'Success',
-            'Login feito com sucesso'
+            res.message
           );
 
           this.modalComponent?.modalClosed.subscribe(() => {

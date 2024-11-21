@@ -7,24 +7,30 @@
     --color-success: #1b9c5c;
     --color-warning: #FDC500;
     --color-white: #fff;
+
     --color-gray: #A4A3A3;
     --color-dark: #1e1e1f;
+
     --color-background: #EDEAE0;
     --color-background-sec: #f3fff8;
+
     --color-blue-1: #00296B;
     --color-blue-2: #00509D;
     --color-yellow: #FFD500;
+
     --card-border-radius: 2rem;
     --border-radius-1: 0.4rem;
     --border-radius-2: 1.2rem;
     --card-padding: 1.8rem;
     --padding-1: 1.2rem;
+
     --box-shadow: 0 2rem 3rem var(--color-light);
     --box-shadow-btn: 0 0 1rem var(--color-gray);
+
     --font-title: 5.5rem;
     --font-subtitle: 1.5rem;
     --font-size: 1.3rem;
-    /* login */
+
     --color-input: #e9e8e8;
     --box-shadow-card: 0 0 3rem var(--color-input);
     --color-dashboard: #c7f9dc;
