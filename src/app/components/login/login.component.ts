@@ -44,9 +44,6 @@ export class LoginComponent {
           const token = res.token;
           localStorage.setItem('authToken', token);
 
-          const userRole = res.user_info.role.name;
-          localStorage.setItem('userRole', userRole);
-
           const username = res.user_info.username;
           localStorage.setItem('username', username);
 
@@ -61,17 +58,11 @@ export class LoginComponent {
         }
       },
       error: (err) => {
-        if (err.status === 401) {
-          this.modalComponent?.showModal(
-            'Error',
-            'Credenciais inválidas. Verifique o login e a senha!'
-          );
-        } else {
-          this.modalComponent?.showModal(
-            'Error',
-            'Erro ao tentar logar: ' + err.message
-          );
-        }
+        const errorMessage = err.error?.message;
+        this.modalComponent?.showModal(
+          'Error',
+          errorMessage
+        );
       }
     });
   }
@@ -86,9 +77,10 @@ export class LoginComponent {
         }
       },
       error: (err) => {
+        const errorMessage = err.error?.message;
         this.modalComponent?.showModal(
           'Error',
-          'Erro ao tentar logar: ' + err.message
+          errorMessage
         );
       }
     });

@@ -7,7 +7,6 @@ import { CourtsPageComponent } from './components/pages/courts-page/courts-page.
 import { LoginComponent } from './components/login/login.component';
 
 import { authGuard } from './guards/auth.guard';
-import { roleGuard } from './guards/role.guard';
 import { UnauthorizedComponent } from './components/unauthorized/unauthorized.component';
 
 import { DashboardComponent } from './components/dashboard/dashboard/dashboard.component';
@@ -55,10 +54,7 @@ export const routes: Routes = [
       { path: 'courts', component: CourtsComponent, title: 'Dashboard - Campos' },
       { path: 'promotions', component: PromotionsComponent, title: 'Dashboard - Promoções' },
       { path: 'statistics', component: StatisticsComponent, title: 'Dashboard - Estatísticas' },
-      { path: 'customers', component: CustomersComponent, title: 'Dashboard - Clientes',
-        canActivate:
-          [roleGuard]
-      },
+      { path: 'customers', component: CustomersComponent, title: 'Dashboard - Clientes' },
       { path: 'settings', component: SettingsComponent, title: 'Dashboard - Definições' },
 
       { path: '', redirectTo: 'main', pathMatch: 'full' },

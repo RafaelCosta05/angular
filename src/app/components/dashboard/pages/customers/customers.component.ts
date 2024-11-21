@@ -45,15 +45,20 @@ export class CustomersComponent {
         }, 1500);
       },
       error: (err: any) => {
-        alert('erro' + err.message)
-        if(this.router.url.includes('/courts')) {
-          this.dashboardComponent.showModal(
-            'Error',
-            'Erro ao tentar carregar a lista de usuários'
-          );
-        }
         this.isLoading = false;
+
+        if (err.status === 403) {
+          this.router.navigate(['unauthorized']);
+        } else {
+          alert('Erro: ' + err.message);
+          if (this.router.url.includes('/courts')) {
+            this.dashboardComponent.showModal(
+              'Error',
+              'Erro ao tentar carregar a lista de usuários'
+            );
+          }
+        }
       }
-    })
+    });
   }
 }
