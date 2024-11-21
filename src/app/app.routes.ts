@@ -13,6 +13,7 @@ import { ErrorPageComponent } from './components/error-page/error-page.component
 import { DashboardComponent } from './components/dashboard/dashboard/dashboard.component';
 import { MainComponent } from './components/dashboard/pages/main/main.component';
 import { ReservationsComponent } from './components/dashboard/pages/reservations/reservations.component';
+import { CompaniesComponent } from './components/dashboard/pages/companies/companies.component';
 import { CourtsComponent } from './components/dashboard/pages/courts/courts.component';
 import { PromotionsComponent } from './components/dashboard/pages/promotions/promotions.component';
 import { StatisticsComponent } from './components/dashboard/pages/statistics/statistics.component';
@@ -52,6 +53,7 @@ export const routes: Routes = [
     children: [
       { path: 'main', component: MainComponent },
       { path: 'reservations', component: ReservationsComponent, title: 'Dashboard - Reservas' },
+      { path: 'companies', component: CompaniesComponent, title: 'Dashboard - Empresas' },
       { path: 'courts', component: CourtsComponent, title: 'Dashboard - Campos' },
       { path: 'promotions', component: PromotionsComponent, title: 'Dashboard - Promoções' },
       { path: 'statistics', component: StatisticsComponent, title: 'Dashboard - Estatísticas' },

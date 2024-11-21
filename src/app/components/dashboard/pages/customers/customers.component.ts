@@ -43,6 +43,7 @@ export class CustomersComponent {
   loadUsers(): void {
     this.userService.index().subscribe({
       next: (data: any) => {
+        console.log(data)
         setTimeout(() => {
           this.users = data;
           this.isLoading = false;
@@ -71,5 +72,18 @@ export class CustomersComponent {
         }
       }
     });
+  }
+
+  showUser(user_id: number) {
+    this.userService.show(user_id).subscribe({
+      next: (data: any) => {
+        console.log(data)
+
+      },
+      error: (err: any) => {
+        console.error('Erro ao carregar os detalhes do usuário:', err);
+        alert('Erro ao carregar detalhes do usuário: ' + err.message);
+      }
+    })
   }
 }

@@ -4,6 +4,7 @@ export const ApiRoutes = {
   register: 'https://api.divinehost.pt/api/register',
 
   users: 'https://api.divinehost.pt/api/users',
+  client: 'https://api.divinehost.pt/api/clients/',
 
   courts: 'https://api.divinehost.pt/api/fields'
 }

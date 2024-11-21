@@ -28,3 +28,9 @@ tbody td {
   font-size: 1.1rem;
   color: var(--color-danger);
 }
+
+button {
+  color: aqua;
+  width: 20%;
+  height: 20%;
+}

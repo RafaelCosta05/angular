@@ -18,4 +18,8 @@ export class UsersService {
     return this.http.get<any>(ApiRoutes.users, { headers });
   }
 
+  show(user_id: number): Observable<any> {
+    console.log(user_id)
+    return this.http.get(ApiRoutes.client + user_id);
+  }
 }

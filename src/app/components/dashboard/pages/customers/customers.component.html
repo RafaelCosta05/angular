@@ -24,6 +24,9 @@
             <td *ngIf="user.last_login_at; else noLogin">
               {{ user.last_login_at }}
             </td>
+            <td>
+              <button (click)="showUser(user.id)">Detalhes</button>
+            </td>
           </tr>
         </tbody>
       </table>
