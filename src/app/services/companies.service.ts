@@ -17,4 +17,16 @@ export class CompaniesService {
 
     return this.http.get<any>(ApiRoutes.companies, { headers });
   }
+
+  create(companyObj: { address: number;
+    name: string;
+    email: string;
+    contact: number;
+    nif: number;
+    newsletter: boolean }): Observable<any> {
+      const token = localStorage.getItem('authToken');
+      const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+
+      return this.http.post<any>(ApiRoutes.companies, companyObj, { headers });
+  }
 }
