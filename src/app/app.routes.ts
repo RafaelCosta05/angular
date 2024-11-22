@@ -7,6 +7,7 @@ import { CourtsPageComponent } from './components/pages/courts-page/courts-page.
 import { LoginComponent } from './components/login/login.component';
 
 import { authGuard } from './guards/auth.guard';
+import { roleGuard } from './guards/role.guard';
 import { UnauthorizedComponent } from './components/unauthorized/unauthorized.component';
 import { ErrorPageComponent } from './components/error-page/error-page.component';
 
@@ -53,11 +54,15 @@ export const routes: Routes = [
     children: [
       { path: 'main', component: MainComponent },
       { path: 'reservations', component: ReservationsComponent, title: 'Dashboard - Reservas' },
-      { path: 'companies', component: CompaniesComponent, title: 'Dashboard - Empresas' },
-      { path: 'courts', component: CourtsComponent, title: 'Dashboard - Campos' },
+      { path: 'companies', component: CompaniesComponent, title: 'Dashboard - Empresas',
+        canActivate: [roleGuard] },
+      { path: 'courts', component: CourtsComponent, title: 'Dashboard - Campos',
+        canActivate: [roleGuard] },
+      { path: 'statistics', component: StatisticsComponent, title: 'Dashboard - Estatísticas',
+        canActivate: [roleGuard] },
+      { path: 'customers', component: CustomersComponent, title: 'Dashboard - Clientes',
+        canActivate: [roleGuard] },
       { path: 'promotions', component: PromotionsComponent, title: 'Dashboard - Promoções' },
-      { path: 'statistics', component: StatisticsComponent, title: 'Dashboard - Estatísticas' },
-      { path: 'customers', component: CustomersComponent, title: 'Dashboard - Clientes' },
       { path: 'settings', component: SettingsComponent, title: 'Dashboard - Definições' },
 
       { path: '', redirectTo: 'main', pathMatch: 'full' },
