@@ -36,6 +36,7 @@ export class CompaniesComponent {
   loadCompanies(): void {
     this.companiesService.index().subscribe({
       next: (data: any) => {
+        console.log(data)
         setTimeout(() => {
           if(data && data.message) {
             if(this.router.url.includes('/companies')) {
@@ -46,6 +47,7 @@ export class CompaniesComponent {
             }
           } else {
             this.companies = data.companies;
+            console.log(this.companies)
           }
           this.isLoading = false;
         }, 1500);

@@ -13,6 +13,7 @@
             <th>Email</th>
             <th>Contact</th>
             <th>NIF</th>
+            <th>Morada</th>
             <th>Campos</th>
             <th>Actions</th>
           </tr>
@@ -23,7 +24,8 @@
             <td>{{ company.email }}</td>
             <td>{{ company.contact }}</td>
             <td>{{ company.nif }}</td>
-            <td>{{ company.fields }}</td>
+            <td>{{ company.address.address }}</td>
+            <td>{{ company.fields_count }}</td>
             <td></td>
           </tr>
         </tbody>
