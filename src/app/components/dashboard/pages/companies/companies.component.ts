@@ -6,6 +6,7 @@ import { CompaniesService } from '../../../../services/companies.service';
 import { CardTableComponent } from '../../utilities/card-table/card-table.component';
 import { TitlePageComponent } from '../../utilities/title-page/title-page.component';
 import { DashboardComponent } from '../../dashboard/dashboard.component';
+import { AddButtonComponent } from '../../utilities/add-button/add-button.component';
 
 @Component({
   selector: 'companies',
@@ -14,7 +15,8 @@ import { DashboardComponent } from '../../dashboard/dashboard.component';
     CommonModule,
     TitlePageComponent,
     CardTableComponent,
-    DashboardComponent
+    DashboardComponent,
+    AddButtonComponent
   ],
   templateUrl: './companies.component.html',
   styleUrl: './companies.component.css'

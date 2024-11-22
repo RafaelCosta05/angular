@@ -2,6 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { CompaniesService } from '../../../../../services/companies.service';
+import { FormsModule } from '@angular/forms';
 
 import { CardTableComponent } from '../../../utilities/card-table/card-table.component';
 import { TitlePageComponent } from '../../../utilities/title-page/title-page.component';
@@ -13,6 +14,7 @@ import { error } from 'console';
   standalone: true,
   imports: [
     CommonModule,
+    FormsModule,
     TitlePageComponent,
     CardTableComponent,
     DashboardComponent
@@ -23,12 +25,12 @@ import { error } from 'console';
 export class CreateCompanyComponent {
 
   companyObj = {
-    address: 0,
+    address_id: 0,
     name: '',
     email: '',
     contact: 0,
     nif: 0,
-    newsletter: false
+    newsletter: 0
   }
 
   constructor(

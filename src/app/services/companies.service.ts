@@ -19,12 +19,12 @@ export class CompaniesService {
   }
 
   create(companyObj: {
-    address: number;
+    address_id: number;
     name: string;
     email: string;
     contact: number;
     nif: number;
-    newsletter: boolean }): Observable<any> {
+    newsletter: number }): Observable<any> {
       const token = localStorage.getItem('authToken');
       const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
 
