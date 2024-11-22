@@ -18,7 +18,8 @@ export class CompaniesService {
     return this.http.get<any>(ApiRoutes.companies, { headers });
   }
 
-  create(companyObj: { address: number;
+  create(companyObj: {
+    address: number;
     name: string;
     email: string;
     contact: number;

@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { CompaniesService } from '../../../../services/companies.service';
+import { CompaniesService } from '../../../../../services/companies.service';
 
-import { CardTableComponent } from '../../utilities/card-table/card-table.component';
-import { TitlePageComponent } from '../../utilities/title-page/title-page.component';
-import { DashboardComponent } from '../../dashboard/dashboard.component';
+import { CardTableComponent } from '../../../utilities/card-table/card-table.component';
+import { TitlePageComponent } from '../../../utilities/title-page/title-page.component';
+import { DashboardComponent } from '../../../dashboard/dashboard.component';
 import { error } from 'console';
 
 @Component({
@@ -21,14 +21,14 @@ import { error } from 'console';
   styleUrl: './create-company.component.css'
 })
 export class CreateCompanyComponent {
-  @ViewChild(ModalComponent) modalComponent: ModalComponent | undefined;
 
-  companyObj: {
-    name: ''
-    email: ''
+  companyObj = {
+    address: 0,
+    name: '',
+    email: '',
     contact: 0,
     nif: 0,
-    newsletter: boolean
+    newsletter: false
   }
 
   constructor(
@@ -43,13 +43,13 @@ export class CreateCompanyComponent {
         if(res.status === 'success') {
           this.dashboardComponent.showModal(
             'Message',
-            data.message
+            res.message
           );
         }
       },
-      error: (err) => {
+      error: (err: any) => {
         const errorMessage = err.error?.message;
-        this.modalComponent?.showModal(
+        this.dashboardComponent.showModal(
           'Error',
           errorMessage
         );

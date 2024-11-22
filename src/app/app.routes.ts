@@ -21,6 +21,9 @@ import { StatisticsComponent } from './components/dashboard/pages/statistics/sta
 import { CustomersComponent } from './components/dashboard/pages/customers/customers.component';
 import { SettingsComponent } from './components/dashboard/pages/settings/settings.component';
 
+//CRUD COMPANY
+import { CreateCompanyComponent } from './components/dashboard/pages/companies/create-company/create-company.component';
+
 export const routes: Routes = [
   {
     path: '',
@@ -64,6 +67,9 @@ export const routes: Routes = [
         canActivate: [roleGuard] },
       { path: 'promotions', component: PromotionsComponent, title: 'Dashboard - Promoções' },
       { path: 'settings', component: SettingsComponent, title: 'Dashboard - Definições' },
+
+      { path: 'create-company', component: CreateCompanyComponent, title: 'Dashboard - Adicionar Empresa' },
+
 
       { path: '', redirectTo: 'main', pathMatch: 'full' },
     ]
