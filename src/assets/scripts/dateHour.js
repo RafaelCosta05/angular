@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
       const hourElement = document.getElementById("hour");
       hourElement.textContent = formatTime(now);
     }
-
+    
     updateDateTime();
 
     setInterval(updateDateTime, 1000);
