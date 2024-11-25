@@ -60,10 +60,11 @@ export class SidebarComponent implements OnInit{
           }
         }
       },
-      error: (err: any) => {
+      error: (err) => {
+        const errorMessage = err.error?.message;
         this.dashboardComponent.showModal(
           'Error',
-          err.message
+          errorMessage
         );
       }
     });
