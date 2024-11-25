@@ -14,4 +14,10 @@ import { MainContentComponent } from '../../utilities/main-content/main-content.
 })
 export class ContactPageComponent {
 
+  personalData = {
+      email: 'padelconnect@gmail.com',
+      phone: '912345678',
+      address: 'Rua Exemplo, 123'
+    }
 }
+

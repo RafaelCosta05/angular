@@ -1,39 +1,16 @@
-if (window.location.pathname === '/') {
+document.addEventListener('DOMContentLoaded', function () {
+  const nextButton = document.querySelector('.swiper-button-next');
+  const prevButton = document.querySelector('.swiper-button-prev');
 
-const carousel = document.querySelector('.carousel'),
-firstImg = carousel.querySelectorAll('img')[0];
-arrowIcons = document.querySelectorAll('.wrapper i');
+  if (nextButton && prevButton) {
+    nextButton.addEventListener('click', function () {
+      const swiperInstance = document.querySelector('.slide-show-slider').swiper;
+      swiperInstance.slideNext();
+    });
 
-let isDragStart = false, prevPageX, prevScrollLeft;
-let firstImgWidth = firstImg.clientWidth + 14;
-
-arrowIcons.forEach(icon => {
-  icon.addEventListener('click', () => {
-    carousel.scrollLeft += icon.id == "left" ? -firstImgWidth : firstImgWidth;
-  });
+    prevButton.addEventListener('click', function () {
+      const swiperInstance = document.querySelector('.slide-show-slider').swiper;
+      swiperInstance.slidePrev();
+    });
+  }
 });
-
-const dragStart = (e) => {
-  isDragStart = true;
-  prevPageX = e.pageX;
-  prevScrollLeft = carousel.scrollLeft;
-}
-
-const dragging = (e) => {
-  if(!isDragStart) return;
-  e.preventDefault();
-  carousel.classList.add("dragging");
-  let positionDiff = e.pageX - prevPageX;
-  carousel.scrollLeft = prevScrollLeft - positionDiff;
-}
-
-const dragStop = () => {
-  isDragStart = false;
-  carousel.classList.remove("dragging");
-}
-
-carousel.addEventListener('mousedown', dragStart);
-carousel.addEventListener('mousemove', dragging);
-carousel.addEventListener('mouseup', dragStop);
-
-}
